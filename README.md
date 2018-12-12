@@ -14,6 +14,7 @@ A new Flutter project for [MDC on codelabs](https://codelabs.developers.google.c
 - [MDC 102 - Material Design Structure and Layout](https://codelabs.developers.google.com/codelabs/mdc-102-flutter/)
 - [MDC 103 - Material Design Theming with Color, Shape, Elevation and Type](https://codelabs.developers.google.com/codelabs/mdc-103-flutter)
 - [MDC 104 - Material Design Advanced Components](https://codelabs.developers.google.com/codelabs/mdc-104-flutter)
+- [코드 이해하기](#코드-이해하기)
 
 ## 플러터의 메테리얼 디자인과 메테리얼 컴포넌트
 
@@ -48,6 +49,7 @@ A new Flutter project for [MDC on codelabs](https://codelabs.developers.google.c
 버튼을 한가지의 종류가 아닌 두가지의 종류로 나눈 이유는 사용자 경험을 높이기 위해서이다. 로그인 페이지에서 중요한 이벤트는 로그인 한 뒤 다음 이벤트로 넘어가는 것이므로 상대적으로 CANCEL 보다는 NEXT 가 중요한 이벤트이다. 이를 위해 CANCEL 버튼은 단순 텍스트만 표시되는 `FlatButton` 위젯으로, NEXT 버튼은 뷰와 대비되어 클릭 가능한 버튼으로 명시적으로 보이도록 `RaisedButton` 위젯으로 설정해서 사용자의 시선을 집중시키도록 하였다. 
 
 *CANCEL* 버튼을 누르면 입력한 데이터를 모두 지우기 위해 텍스트 필드에 할당한 `controller`들을 이용하여 텍스트 필드를 삭제하였다. 
+
 ```dart
 _usernameController.clear();
 _passwordController.clear();
