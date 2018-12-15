@@ -91,6 +91,30 @@ Navigator.pop(context);
 
 여기서 `AspectRatio` 위젯은 이름에서 추측할 수 있듯이, 표기할 위젯의 가로/세로 비율을 지정하는 위젯이다. `Image` 위젯에서 `fit` 필드는 해당 이미지의 크기를 어떤 방식으로 조절할 것 인지를 지정한다. 본 프로젝트에서 사용한 `BoxFit.fitWidth`는 이미지를 가로로 늘려 컨테이너의 크기에 맞춘다는 의미이다. 
 
+### MDC-103
+
+#### pubspec.yaml
+
+MDC 세번째 강의에서는 폰트를 설정하고 테마를 바꾸는 작업을 위주로 진행한다. 이를 위해 앱에서 사용할 폰트를 추가해야한다. 폰트를 추가하는 방법은, 일단 앱 프로젝트의 원하는 폴더에 사용하고자 하는 폴더를 복사한뒤 `pubspec.yaml` 파일에 폰트 정보를 추가해야한다. MDC 에서 제공하는 기본 프로젝트 파일에 이미 `fonts/Rubik-Regular.ttf` 와 `fonts/Rubik-Medium.ttf` 파일이 포함되어 있다. 이를 애플리케이션에서 사용하기 위해서는 아래의 코드를 `pubspec.yaml`의 `flutter:` 필드에 `fonts` 레이어를 추가해야 한다. 이때 탭 대신에 띄어쓰기 2개로 필드의 레이어를 구분해야 한다.
+
+```yaml
+flutter:
+  fonts:
+    - family: Rubik
+    fonts:
+      - asset: fonts/Rubik-Regular.ttf
+      - asset: fonts/Rubik-Medium.ttf
+        weight: 500
+```
+
+#### colors.dart
+
+이 파일에는 앱에서 사용할 색 정보를 저장한다. 특별히 설명할 코드가 없으므로 실제 코드는 직접 보길 바란다. Color() 위젯에는 16진수로 ARGB를 표현하면 된다. 직접 색을 설정하지 않고 material이 제공하는 기본 색을 사용할 수도 있다. 이 때에는 `Colors` 클래스의 데이터를 사용한다. `Color.white`와 같이 바로 색을 사용할 수도 있고, `Colors.pink[400]`과 같이 어두운 정도를 결정할 수 있다.
+
+#### app.dart
+
+`app.dart` 파일에서 수정된 코드는 주로 테마 설정 부분이므로 생략한다. 그중 기존 테마를 가져와서 원하는 필드만 바꾸는 `copyWith()` 메소드가 가장 중요하다. 거의 모든 위젯에 포함되어 있는 클래스로, 복사하고자 하는 클래스의 모든 속성을 그대로 가져 오면서 특정 필드의 속성만 바꿀 수 있는 중요한 메소드이다. 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
